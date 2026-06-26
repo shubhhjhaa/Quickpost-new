@@ -26,7 +26,8 @@ export function AdminLayout({ children }: AdminLayoutProps) {
     '/admin/referral',
     '/admin/accounts',
     '/admin/announcement',
-    '/admin/notification'
+    '/admin/notification',
+    '/admin/kyc'
   ].includes(location.pathname);
 
   return (

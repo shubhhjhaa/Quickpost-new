@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AdminLayout } from '../../components/admin/layout/AdminLayout';
 import { RefreshCcw, Package, DollarSign, Users, CreditCard, ShoppingCart, Clock, AlertTriangle, HelpCircle, CheckCircle2, RotateCcw, ShieldAlert, Truck, FileText, ArrowRight, IndianRupee, PieChart as PieChartIcon, Percent } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
@@ -105,6 +106,27 @@ export function AdminDashboard() {
         <div className="flex items-center gap-2 mb-4 text-[11px] font-medium text-[#64748B]">
           Note : Showing data below from 17th Mar-16th Apr.
           <RefreshCcw className="w-3 h-3 cursor-pointer hover:text-[#0F172A]" />
+        </div>
+
+        {/* KYC Pending Banner Nudge */}
+        <div className="mb-6 bg-amber-50 border border-amber-200/80 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm hover:border-amber-300 transition-all">
+          <div className="flex items-start sm:items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center shrink-0 text-amber-600">
+              <ShieldAlert className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-xs font-bold text-amber-900 leading-snug">KYC Verification Pending</h4>
+              <p className="text-[10px] text-amber-700 font-medium leading-relaxed mt-0.5">
+                Please complete your KYC to unlock unlimited shipping, instant COD remittance, and secure wallet transfers.
+              </p>
+            </div>
+          </div>
+          <Link 
+            to="/admin/kyc" 
+            className="shrink-0 h-9 px-4 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm shadow-amber-600/10 cursor-pointer"
+          >
+            Complete KYC Now <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
 
         {/* Row 1: Top Metrics */}

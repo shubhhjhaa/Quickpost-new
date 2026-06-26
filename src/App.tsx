@@ -48,6 +48,7 @@ import { AdminTracking } from './pages/admin/AdminTracking';
 import { AdminTransferCOD } from './pages/admin/AdminTransferCOD';
 import { AdminProfile } from './pages/admin/AdminProfile';
 import { AdminOrderTracking } from './pages/admin/AdminOrderTracking';
+import { AdminKYC } from './pages/admin/AdminKYC';
 
 function GlobalOrderClickInterceptor() {
   const navigate = useNavigate();
@@ -164,6 +165,7 @@ function App() {
             <Route path="/admin/referral" element={<AdminReferral />} />
             <Route path="/admin/rate-card" element={<AdminRateCard />} />
             <Route path="/admin/order-tracking" element={<AdminOrderTracking />} />
+            <Route path="/admin/kyc" element={<AdminKYC />} />
             
             {/* Internal CRM Routes */}
             <Route path="/internal-crm/shipments" element={<CRMShipmentListing />} />

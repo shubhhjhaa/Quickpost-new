@@ -94,6 +94,7 @@ const MENU_GROUPS = [
       { name: 'Status Map', path: '/admin/status-map', icon: Route },
       { name: 'EDD Mapping', path: '/admin/edd-mapping', icon: Calendar },
       { name: 'EPD Mapping', path: '/admin/epd-mapping', icon: Calendar },
+      { name: 'Complete KYC', path: '/admin/kyc', icon: FileText },
     ]
   },
   {
