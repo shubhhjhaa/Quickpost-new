@@ -14,8 +14,8 @@ export function ProtectedRoute({ allowedRoles }: ProtectedRouteProps) {
   }
 
   if (allowedRoles && role && !allowedRoles.includes(role)) {
-    // If authenticated but wrong role, redirect to appropriate dashboard
-    return <Navigate to={role === 'admin' ? "/admin/dashboard" : "/dashboard"} replace />;
+    // Redirect to unified admin dashboard
+    return <Navigate to="/admin/dashboard" replace />;
   }
 
   return <Outlet />;

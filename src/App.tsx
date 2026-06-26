@@ -6,20 +6,7 @@ import { ForgotPassword } from './pages/ForgotPassword';
 import { Login } from './pages/Login';
 import { ProtectedRoute } from './components/layout/ProtectedRoute';
 
-// User Pages
-import { Dashboard } from './pages/Dashboard';
-import { Orders } from './pages/Orders';
-import { Shipments } from './pages/Shipments';
-import { Tracking } from './pages/Tracking';
-import { NDR } from './pages/NDRPage';
-import { Billing } from './pages/Billing';
-import { Wallet } from './pages/Wallet';
-import { Reports } from './pages/Reports';
-import { Support } from './pages/Support';
-import { Profile } from './pages/Profile';
-import { Company } from './pages/Company';
-import { ApiKeys } from './pages/ApiKeys';
-import { Settings } from './pages/Settings';
+
 
 // Internal CRM Pages
 import { CRMShipmentListing } from './pages/admin/CRMShipmentListing';
@@ -143,27 +130,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           
-          {/* User Routes */}
-          <Route element={<ProtectedRoute allowedRoles={['user']} />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/orders" element={<Orders />} />
-            <Route path="/shipments" element={<Shipments />} />
-            <Route path="/tracking" element={<Tracking />} />
-            <Route path="/ndr" element={<NDR />} />
-            <Route path="/billing" element={<Billing />} />
-            <Route path="/cod" element={<Billing />} />
-            <Route path="/wallet" element={<Wallet />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/support" element={<Support />} />
-            <Route path="/account" element={<Settings />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/company" element={<Company />} />
-            <Route path="/api-keys" element={<ApiKeys />} />
-            <Route path="/settings" element={<Settings />} />
-          </Route>
-
           {/* Admin Routes */}
-          <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
+          <Route element={<ProtectedRoute allowedRoles={['admin', 'user']} />}>
             <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/users" element={<AdminUsers />} />

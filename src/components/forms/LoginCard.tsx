@@ -53,7 +53,7 @@ export function LoginCard() {
       
       // Simulate redirect to dashboard
       setTimeout(() => {
-        navigate(role === 'admin' ? '/admin/dashboard' : '/dashboard');
+        navigate('/admin/dashboard');
       }, 500);
       
     } catch (err: any) {
