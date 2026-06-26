@@ -395,9 +395,9 @@ export function AdminKYC() {
                           }`}>
                             {businessType === 'INDIVIDUAL' && <div className="w-2 h-2 rounded-full bg-[#00A86B]" />}
                           </div>
-                          <span className="text-xs font-bold text-slate-800 uppercase tracking-wide">Individual</span>
+                          <span className="text-[14px] font-bold text-slate-800 uppercase tracking-wide font-sans">Individual</span>
                         </div>
-                        <p className="text-[10px] text-slate-400 font-medium leading-relaxed">
+                        <p className="text-xs text-slate-400 font-normal leading-relaxed font-sans">
                           A seller using online platforms without registering under the Companies Act
                         </p>
                       </div>
@@ -417,9 +417,9 @@ export function AdminKYC() {
                           }`}>
                             {businessType === 'COMPANY' && <div className="w-2 h-2 rounded-full bg-[#00A86B]" />}
                           </div>
-                          <span className="text-xs font-bold text-slate-800 uppercase tracking-wide">Company</span>
+                          <span className="text-[14px] font-bold text-slate-800 uppercase tracking-wide font-sans">Company</span>
                         </div>
-                        <p className="text-[10px] text-slate-400 font-medium leading-relaxed">
+                        <p className="text-xs text-slate-400 font-normal leading-relaxed font-sans">
                           (Registered as LLP, Private, Subsidiary, Holding, etc. under Companies Act 2013)
                         </p>
                       </div>
