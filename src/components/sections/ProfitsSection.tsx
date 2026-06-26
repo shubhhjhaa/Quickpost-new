@@ -276,9 +276,9 @@ export function ProfitsSection() {
                   className="w-full flex justify-center z-10"
                 >
                   {activeIndex === 0 && (
-                    <div className="absolute inset-0 w-full h-full">
+                    <div className="absolute inset-0 w-full h-full animate-fade-in">
                       <img 
-                        src="/brands/img 1.png" 
+                        src="/brands/post_ndr_follow_ups.png" 
                         alt="Post-NDR Follow Ups" 
                         className="w-full h-full object-cover rounded-[24px]"
                       />
@@ -286,102 +286,32 @@ export function ProfitsSection() {
                   )}
 
                   {activeIndex === 1 && (
-                    <div className="w-full max-w-[290px] sm:max-w-[310px] bg-white rounded-2xl border border-slate-100 shadow-xl overflow-hidden font-sans text-left text-slate-800">
-                      <div className="bg-[#0F172A] text-white px-4 py-3 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
-                          <span className="text-xs font-bold uppercase tracking-wider">Smart Carrier Routing</span>
-                        </div>
-                        <span className="text-[10px] bg-blue-500/20 text-blue-400 font-bold px-2 py-0.5 rounded">Lowest SLA Risk</span>
-                      </div>
-                      <div className="p-4 flex flex-col gap-3">
-                        <div className="flex justify-between items-center text-xs">
-                          <span className="font-bold text-slate-900">Destination: Mumbai (400001)</span>
-                          <span className="text-[10px] font-semibold text-slate-400">Transit: 14 hrs</span>
-                        </div>
-                        <div className="bg-slate-50 border border-slate-100 rounded-lg p-3 flex flex-col gap-2">
-                          <div className="flex justify-between text-[11px]">
-                            <span className="text-slate-500">Preferred Choice:</span>
-                            <span className="font-bold text-slate-800">BlueDart Air (SLA 99.4%)</span>
-                          </div>
-                          <div className="flex justify-between text-[11px]">
-                            <span className="text-slate-500">Backup Option:</span>
-                            <span className="font-bold text-slate-400">Delhivery Express (SLA 96.2%)</span>
-                          </div>
-                        </div>
-                        <div className="flex flex-col gap-1 border-t border-slate-100 pt-3">
-                          <div className="text-[11px] font-bold text-slate-700 flex justify-between">
-                            <span>Courier Assigned</span>
-                            <span className="text-blue-600 font-black">BlueDart Air</span>
-                          </div>
-                          <div className="text-[10px] text-slate-400">Order successfully auto-routed to fastest air cargo path.</div>
-                        </div>
-                      </div>
+                    <div className="absolute inset-0 w-full h-full animate-fade-in">
+                      <img 
+                        src="/brands/express_day_delivery.png" 
+                        alt="Same/Next-day Delivery" 
+                        className="w-full h-full object-cover rounded-[24px]"
+                      />
                     </div>
                   )}
 
                   {activeIndex === 2 && (
-                    <div className="w-full max-w-[290px] sm:max-w-[310px] bg-white rounded-2xl border border-slate-100 shadow-xl overflow-hidden font-sans text-left text-slate-800">
-                      <div className="bg-[#0F172A] text-white px-4 py-3 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-                          <span className="text-xs font-bold uppercase tracking-wider">AI RTO Prevention</span>
-                        </div>
-                        <span className="text-[10px] bg-amber-500/20 text-amber-500 font-bold px-2 py-0.5 rounded">Risk Shield Active</span>
-                      </div>
-                      <div className="p-4 flex flex-col gap-3">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <div className="text-xs font-bold text-slate-900">Order #QP-908412</div>
-                            <div className="text-[11px] text-slate-400">Buyer RTO Risk: <span className="text-rose-600 font-bold">High (84%)</span></div>
-                          </div>
-                          <span className="text-[10px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">Flagged</span>
-                        </div>
-                        <div className="bg-slate-50 border border-slate-100 rounded-lg p-2.5 text-[11px] leading-relaxed text-slate-600 flex flex-col gap-1">
-                          <div><span className="font-semibold text-slate-800">Risk Triggers:</span></div>
-                          <ul className="list-disc pl-4 text-slate-500 flex flex-col gap-0.5">
-                            <li>Incomplete shipping address</li>
-                            <li>2 previous RTOs with other sellers</li>
-                            <li>High-value COD order</li>
-                          </ul>
-                        </div>
-                        <div className="flex justify-between items-center border-t border-slate-100 pt-3 text-[11px]">
-                          <span className="text-slate-500">Automated Counter-Action:</span>
-                          <span className="font-bold text-[#00A86B]">Pre-Dispatch Block Sent</span>
-                        </div>
-                      </div>
+                    <div className="absolute inset-0 w-full h-full animate-fade-in">
+                      <img 
+                        src="/brands/rto_reduction_suite.png" 
+                        alt="RTO Reduction Suite" 
+                        className="w-full h-full object-cover rounded-[24px]"
+                      />
                     </div>
                   )}
 
                   {activeIndex === 3 && (
-                    <div className="w-full max-w-[290px] sm:max-w-[310px] bg-white rounded-2xl border border-slate-100 shadow-xl overflow-hidden font-sans text-left text-slate-800">
-                      <div className="bg-[#0F172A] text-white px-4 py-3 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                          <span className="text-xs font-bold uppercase tracking-wider">Remittance Ledger</span>
-                        </div>
-                        <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded">T+2 Settlement</span>
-                      </div>
-                      <div className="p-4 flex flex-col gap-3">
-                        <div className="flex justify-between items-baseline">
-                          <span className="text-xs text-slate-400">Available COD Balance</span>
-                          <span className="text-2xl font-black text-slate-900 tracking-tight">₹1,48,250.00</span>
-                        </div>
-                        <div className="bg-slate-50 border border-slate-100 rounded-lg p-2.5 flex flex-col gap-1.5 text-[11px]">
-                          <div className="flex justify-between text-slate-500">
-                            <span>Total Orders Settled:</span>
-                            <span className="font-bold text-slate-700">142 Shipments</span>
-                          </div>
-                          <div className="flex justify-between text-slate-500">
-                            <span>Remitted to Bank:</span>
-                            <span className="font-bold text-slate-700">₹1,32,000.00</span>
-                          </div>
-                        </div>
-                        <div className="flex justify-between items-center border-t border-slate-100 pt-3 text-[11px]">
-                          <span className="text-slate-500 font-medium">Payout Reference:</span>
-                          <span className="font-mono text-slate-700 font-bold">TXN-9081290312</span>
-                        </div>
-                      </div>
+                    <div className="absolute inset-0 w-full h-full animate-fade-in">
+                      <img 
+                        src="/brands/early_cod_payout.png" 
+                        alt="Early COD Payout Options" 
+                        className="w-full h-full object-cover rounded-[24px]"
+                      />
                     </div>
                   )}
                 </motion.div>

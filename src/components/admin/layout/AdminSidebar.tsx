@@ -47,10 +47,8 @@ const MENU_GROUPS = [
   {
     label: 'Internal CRM',
     icon: Building2,
-    isBeta: true,
-    items: [
-      { name: 'Shipments', path: '/internal-crm/shipments', icon: Package },
-    ]
+    path: '/internal-crm/shipments',
+    isBeta: true
   },
   {
     label: 'Orders',
