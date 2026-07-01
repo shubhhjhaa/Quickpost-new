@@ -76,6 +76,7 @@ export function AdminNDR() {
   const [drawerOrder, setDrawerOrder] = useState<typeof INITIAL_MOCK_NDR[0] | null>(null);
   const [showActionMenu, setShowActionMenu] = useState(false);
   const actionMenuRef = useRef<HTMLDivElement>(null);
+  const [hoveredPickup, setHoveredPickup] = useState<{id: string, rect: DOMRect, name: string} | null>(null);
 
   // Filter States
   const [searchTerm, setSearchTerm] = useState('');
@@ -394,7 +395,19 @@ export function AdminNDR() {
                     <div className="font-normal text-[13px] text-[#64748B] mt-0.5">{order.customerPhone}</div>
                   </td>
                   <td className="p-3">
-                    <div className="text-[#64748B]">{order.pickupName}</div>
+                    <div 
+                      className="text-[#64748B] underline decoration-dotted underline-offset-2 hover:text-[#0F172A] transition-colors cursor-help inline-block"
+                      onMouseEnter={(e) => {
+                        setHoveredPickup({
+                          id: order.awb,
+                          rect: e.currentTarget.getBoundingClientRect(),
+                          name: order.pickupName
+                        });
+                      }}
+                      onMouseLeave={() => setHoveredPickup(null)}
+                    >
+                      {order.pickupName}
+                    </div>
                   </td>
                   <td className="p-3">
                     <div className="text-xs font-semibold text-[#00A86B]">{order.courier}</div>
@@ -515,6 +528,27 @@ export function AdminNDR() {
               </div>
             </div>
           </div>
+        </div>
+      )}
+      
+      {hoveredPickup && (
+        <div 
+          className="fixed z-[9999] pointer-events-none bg-[#0F172A] text-white text-[10px] p-3 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-opacity animate-in fade-in zoom-in-95 duration-150 w-64"
+          style={{
+            top: hoveredPickup.rect.top - 10,
+            left: hoveredPickup.rect.left + (hoveredPickup.rect.width / 2),
+            transform: 'translate(-50%, -100%)'
+          }}
+        >
+          <div className="font-bold text-white mb-1.5 flex items-center gap-1.5">
+            <MapPin className="w-3.5 h-3.5 text-[#00A86B]" /> 
+            Pickup Address Details
+          </div>
+          <div className="font-semibold text-white mb-1">{hoveredPickup.name}</div>
+          <div className="text-slate-300 leading-relaxed">
+            Shop No 14, Ground Floor, Main Market Road, Near City Center, {hoveredPickup.name.includes('Warehouse') ? hoveredPickup.name.split('–')[1]?.trim() || 'City' : 'New Delhi'}, 110001
+          </div>
+          <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-[#0F172A]"></div>
         </div>
       )}
     </AdminLayout>

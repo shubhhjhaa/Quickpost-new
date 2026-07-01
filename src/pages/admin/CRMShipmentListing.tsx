@@ -311,7 +311,7 @@ export function CRMShipmentListing() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const totalColumns = showLastUpdate ? 12 : 11;
+  const totalColumns = showLastUpdate ? 14 : 13;
 
 
   return (
@@ -496,22 +496,24 @@ export function CRMShipmentListing() {
 
         {/* Table Area */}
         <div className="bg-white flex flex-col flex-1 min-h-0 overflow-hidden">
-          <div className={`flex-1 overflow-y-auto w-full relative ${showLastUpdate ? 'overflow-x-auto' : 'overflow-x-hidden'}`}>
-            <table className={`text-left border-collapse w-full ${showLastUpdate ? 'min-w-[1400px]' : 'table-fixed'}`}>
+          <div className="flex-1 overflow-auto w-full relative no-scrollbar">
+            <table className={`text-left border-collapse w-full ${showLastUpdate ? 'min-w-[1600px]' : 'min-w-[1400px]'}`}>
               <colgroup>
                 <col style={{ width: '36px' }} />
-                <col style={{ width: '12%' }} />
+                <col style={{ width: '10%' }} />
+                <col style={{ width: '10%' }} />
                 <col style={{ width: '11%' }} />
-                <col style={{ width: '13%' }} />
                 <col style={{ width: '10%' }} />
                 <col style={{ width: '9%' }} />
-                <col style={{ width: '11%' }} />
                 <col style={{ width: '9%' }} />
-                <col style={{ width: '12%' }} />
+                <col style={{ width: '9%' }} />
+                <col style={{ width: '10%' }} />
+                <col style={{ width: '8%' }} />
+                <col style={{ width: '10%' }} />
                 {showLastUpdate && <col style={{ width: '180px' }} />}
-                <col style={{ width: '50px' }} />
+                <col style={{ width: '80px' }} />
               </colgroup>
-              <thead className="sticky top-0 z-40 shadow-sm">
+              <thead className="sticky top-0 z-40 shadow-sm bg-[#E6F5F1]">
                 <tr className="bg-[#E6F5F1] text-[11px] font-medium text-[#00A86B] uppercase tracking-wider whitespace-nowrap">
                   <th className="px-2 py-3 text-center align-middle">
                     <input type="checkbox" checked={selectedOrders.length === paginated.length && paginated.length > 0} onChange={toggleAll} className="rounded border-[#00A86B] accent-[#00A86B] w-3.5 h-3.5" />
@@ -534,6 +536,12 @@ export function CRMShipmentListing() {
                       <span>Product</span>
                     </div>
                   </th>
+                  <th className="px-2 py-3 text-left align-middle">
+                    <div className="flex items-center gap-1">
+                      <Package className="w-3.5 h-3.5 shrink-0"/>
+                      <span>Package</span>
+                    </div>
+                  </th>
                   <th className="px-2 py-3 text-center align-middle">
                     <div className="flex items-center justify-center gap-1">
                       <IndianRupee className="w-3.5 h-3.5 shrink-0"/>
@@ -544,6 +552,12 @@ export function CRMShipmentListing() {
                     <div className="flex items-center gap-1">
                       <User className="w-3.5 h-3.5 shrink-0"/>
                       <span>Customer</span>
+                    </div>
+                  </th>
+                  <th className="px-2 py-3 text-left align-middle">
+                    <div className="flex items-center gap-1">
+                      <MapPin className="w-3.5 h-3.5 shrink-0"/>
+                      <span>Pickup</span>
                     </div>
                   </th>
                   <th className="px-2 py-3 text-left align-middle">
@@ -641,6 +655,11 @@ export function CRMShipmentListing() {
                       <div className="text-[#64748B] mt-0.5 truncate">SKU: {row.sku || 'QP-ALL-PRO'}</div>
                       <div className="text-[#64748B] truncate">QTY: {row.qty || 1}</div>
                     </td>
+                    <td className="px-2 py-3 text-left align-middle text-xs font-normal text-[#64748B]">
+                      <div className="text-[#0F172A] font-medium">Weight: {row.weight || '500g'}</div>
+                      <div className="mt-0.5">L*W*H: {row.dimensions || '12×10×8'}</div>
+                      <div className="mt-0.5">Vol. Weight: {row.volWeight || '0.24 KG'}</div>
+                    </td>
                     <td className="px-2 py-3 text-center align-middle">
                       <div className="font-semibold text-[#0F172A]">{row.shipmentValue}</div>
                       <div className="mt-1"><span className="px-2 py-0.5 rounded-full border border-blue-200 text-blue-600 font-bold text-[9px] bg-blue-50/50">{row.paymentMode}</span></div>
@@ -648,6 +667,11 @@ export function CRMShipmentListing() {
                     <td className="px-2 py-3 text-left align-middle">
                       <div className="font-normal text-[13px] text-[#0F172A] truncate">{row.customerName}</div>
                       <div className="font-normal text-[13px] text-[#64748B] mt-0.5">{row.customerPhone}</div>
+                    </td>
+                    <td className="px-2 py-3 text-left align-middle">
+                      <div className="font-normal text-[13px] text-[#0F172A] truncate" title={row.pickupAddr}>
+                        {row.pickupAddr || 'Mumbai, MH'}
+                      </div>
                     </td>
                     <td className="px-2 py-3 text-left align-middle">
                       <div className="text-xs font-semibold text-[#00A86B] truncate">{row.courier}</div>
